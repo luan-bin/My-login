@@ -74,7 +74,7 @@ input {
   border: 0;
   color: inherit;
   font-family: inherit;
-  width: 100%;
+  width: 80%;
   outline-color: var(--color-primary);
 }
 
@@ -95,8 +95,7 @@ input::placeholder {
 
 .social-btn {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-items: center;
   gap: 10px;
   background: transparent;
   border: 1px solid var(--color-border);
