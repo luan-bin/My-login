@@ -3,30 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login UI</title>
-    <link rel="stylesheet" href="style.css">
+    <title>MindX Cinema</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-
-<div class="login-box">
-    <h2>Đăng Nhập</h2>
-
-    <div class="input-group">
-        <label>Emai</label>
-        <input type="email" placeholder="Nhập email...">
+    <div class="background-overlay"></div>
+    
+    <!-- Login Form -->
+    <div class="container" id="loginContainer">
+        <h1>Sign In</h1>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="email" id="loginEmail" placeholder=" " required>
+                <label for="loginEmail">Email address</label>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="loginPassword" placeholder=" " required>
+                <label for="loginPassword">Password</label>
+            </div>
+            
+            <button type="submit" class="submit-btn">Sign In</button>
+            
+            <div class="form-footer">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <a href="#" class="help-link">Need help?</a>
+            </div>
+        </form>
+        
+        <div class="signup-link">
+            New to MindX Cinema? <a href="#" id="showRegister">Sign up now</a>
+        </div>
+        
+        <div class="recaptcha-info">
+            This page is protected by Google reCAPTCHA to ensure you're not a bot. 
+            <a href="#">Learn more</a>
+        </div>
     </div>
 
-    <div class="input-group">
-        <label>Mật khẩu</label>
-        <input type="password" placeholder="Nhập mật khẩu...">
+    <!-- Register Form -->
+    <div class="container hidden" id="registerContainer">
+        <h1>Sign Up</h1>
+        
+        <form id="registerForm">
+            <div class="input-group">
+                <input type="text" id="registerUsername" placeholder=" " required>
+                <label for="registerUsername">Username</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="registerEmail" placeholder=" " required>
+                <label for="registerEmail">Email address</label>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="registerPassword" placeholder=" " required>
+                <label for="registerPassword">Password</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="verifyPassword" placeholder=" " required>
+                <label for="verifyPassword">Confirm Password</label>
+            </div>
+            
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+        
+        <div class="signup-link">
+            Already have an account? <a href="#" id="showLogin">Sign in now</a>
+        </div>
+        
+        <div class="recaptcha-info">
+            This page is protected by Google reCAPTCHA to ensure you're not a bot. 
+            <a href="#">Learn more</a>
+        </div>
     </div>
-
-    <button>Đăng Nhập</button>
-
-    <div class="links">
-        <a href="#">Quên mật khẩu?</a><br>
-        Chưa có tài khoản? <a href="#">Đăng ký</a>
-    </div>
-</div>
-
 </body>
+</html>
