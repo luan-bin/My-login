@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindX Cinema</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Video Background -->
+    <video class="background-video" autoplay muted loop playsinline>
+        <source src="background.mp4" type="video/mp4">
+        <video class="background-video" autoplay muted loop playsinline playbackRate="0.3"></video>
+        Your browser does not support the video tag.
+    </video>
+    
+    <div class="background-overlay"></div>
+    
+    <!-- Login Form -->
+    <div class="container" id="loginContainer">
+        <h1>Sign In</h1>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="email" id="loginEmail" placeholder=" " required>
+                <label for="loginEmail">Email address</label>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="loginPassword" placeholder=" " required>
+                <label for="loginPassword">Password</label>
+            </div>
+            
+            <button type="submit" class="submit-btn">Sign In</button>
+            
+            <div class="form-footer">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <a href="#" class="help-link">Need help?</a>
+            </div>
+        </form>
+        
+        <div class="signup-link">
+            New to MindX Cinema? <a href="#" id="showRegister">Sign up now</a>
+        </div>
+        
+        <div class="recaptcha-info">
+            This page is protected by Google reCAPTCHA to ensure you're not a bot. 
+            <a href="#">Learn more</a>
+        </div>
+    </div>
+
+    <!-- Register Form -->
+    <div class="container hidden" id="registerContainer">
+        <h1>Sign Up</h1>
+        
+        <form id="registerForm">
+            <div class="input-group">
+                <input type="text" id="registerUsername" placeholder=" " required>
+                <label for="registerUsername">Username</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="registerEmail" placeholder=" " required>
+                <label for="registerEmail">Email address</label>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="registerPassword" placeholder=" " required>
+                <label for="registerPassword">Password</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="verifyPassword" placeholder=" " required>
+                <label for="verifyPassword">Confirm Password</label>
+            </div>
+            
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+        
+        <div class="signup-link">
+            Already have an account? <a href="#" id="showLogin">Sign in now</a>
+        </div>
+        
+        <div class="recaptcha-info">
+            This page is protected by Google reCAPTCHA to ensure you're not a bot. 
+            <a href="#">Learn more</a>
+        </div>
+    </div>
+</body>
+</html>
