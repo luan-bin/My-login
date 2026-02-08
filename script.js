@@ -282,13 +282,13 @@ registerForm.addEventListener('submit', function(e) {
     
     // If no errors, submit form
     if (!hasError) {
-        showSuccessMessage('Đăng ký thành công!', 'Tài khoản của bạn đã được tạo');
+        showSuccessMessage('Đăng ký thành công!', 'Tài khoản của bạn đã được tạo', true); // Thêm tham số true
         console.log('Registration successful!', { username, email, password });
     }
 });
 
 // Show success message
-function showSuccessMessage(title, message) {
+function showSuccessMessage(title, message, isRegister = false) {
     // Create success overlay
     const successOverlay = document.createElement('div');
     successOverlay.className = 'success-overlay';
@@ -308,9 +308,17 @@ function showSuccessMessage(title, message) {
     // Remove after 2 seconds and reset form
     setTimeout(() => {
         successOverlay.remove();
-        loginForm.reset();
-        registerForm.reset();
-        // Redirect or reload page
-        // window.location.href = '/dashboard';
+        
+        if (isRegister) {
+            // Nếu là đăng ký, chuyển sang form login
+            registerForm.reset();
+            registerContainer.classList.add('hidden');
+            loginContainer.classList.remove('hidden');
+        } else {
+            // Nếu là đăng nhập, reset form
+            loginForm.reset();
+            // Redirect or reload page
+            // window.location.href = '/dashboard';
+        }
     }, 2000);
 }
