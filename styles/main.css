@@ -1,0 +1,531 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f1419;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background-color: #1a1f2e;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a9eff;
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: #8899a6;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-btn,
+.menu-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.search-btn:hover,
+.menu-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #4a9eff;
+}
+
+/* User Dropdown Styles */
+.user-dropdown {
+    position: relative;
+}
+
+.user-avatar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.user-avatar:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-avatar img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #4a9eff;
+}
+
+.user-avatar .username {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background-color: #1a1f2e;
+    border-radius: 8px;
+    min-width: 250px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border: 1px solid #2a3f5f;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: 20px;
+    width: 12px;
+    height: 12px;
+    background-color: #1a1f2e;
+    border-left: 1px solid #2a3f5f;
+    border-top: 1px solid #2a3f5f;
+    transform: rotate(45deg);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.dropdown-item:first-child {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 15px 20px;
+}
+
+.dropdown-item strong {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.dropdown-item small {
+    font-size: 12px;
+    color: #8899a6;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(74, 158, 255, 0.1);
+}
+
+.dropdown-item svg {
+    stroke-width: 2;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: #2a3f5f;
+    margin: 5px 0;
+}
+
+.logout-btn {
+    color: #ff4757 !important;
+}
+
+.logout-btn:hover {
+    background-color: rgba(255, 71, 87, 0.1) !important;
+}
+
+/* Login Button */
+.login-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: #4a9eff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #6bb6ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(74, 158, 255, 0.4);
+}
+
+.login-btn svg {
+    stroke-width: 2;
+}
+
+/* Main Content */
+.main-content {
+    padding: 30px 0;
+}
+
+/* Carousel Styles */
+.carousel-section {
+    margin-bottom: 40px;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #1a1f2e;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 450px;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-btn.prev {
+    left: 20px;
+    border-radius: 0 5px 5px 0;
+}
+
+.carousel-btn.next {
+    right: 20px;
+    border-radius: 5px 0 0 5px;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #4a9eff;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 50px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #2a3f5f;
+}
+
+.section-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.see-more {
+    color: #4a9eff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.see-more:hover {
+    color: #6bb6ff;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.tab {
+    background-color: transparent;
+    color: #8899a6;
+    border: 1px solid #2a3f5f;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.tab:hover,
+.tab.active {
+    background-color: #4a9eff;
+    color: #ffffff;
+    border-color: #4a9eff;
+}
+
+/* Manga Grid Styles */
+.manga-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+}
+
+.manga-card {
+    background-color: #1a1f2e;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.manga-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(74, 158, 255, 0.3);
+}
+
+.manga-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.manga-info {
+    padding: 15px;
+}
+
+.manga-info h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #ffffff;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.chapter {
+    font-size: 12px;
+    color: #8899a6;
+}
+
+/* Large Manga Grid */
+.manga-grid-large {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.manga-card-large {
+    position: relative;
+    background-color: #1a1f2e;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.manga-card-large:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(74, 158, 255, 0.3);
+}
+
+.manga-card-large img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4757;
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Footer */
+.footer {
+    background-color: #1a1f2e;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid #2a3f5f;
+}
+
+.footer p {
+    color: #8899a6;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+    
+    .manga-grid,
+    .manga-grid-large {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .carousel-inner {
+        height: 250px;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .carousel-btn {
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 18px;
+    }
+    
+    .manga-grid,
+    .manga-grid-large {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .carousel-inner {
+        height: 200px;
+    }
+}

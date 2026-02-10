@@ -3,93 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Comic - Đăng nhập / Đăng ký</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- ⚠️ QUAN TRỌNG: Load storage.js TRƯỚC script.js -->
-    <script src="script/storage.js"></script>
-    <script src="script/script.js" defer></script>
+    <title>Góc Truyện Tranh</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <!-- Video Background -->
-    <video class="background-video" autoplay muted loop playsinline>
-        <source src="background.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    
-    <div class="background-overlay"></div>
-    
-    <!-- Login Form -->
-    <div class="container" id="loginContainer">
-        <h1>Sign In</h1>
-        
-        <form id="loginForm">
-            <div class="input-group">
-                <input type="email" id="loginEmail" placeholder=" " required>
-                <label for="loginEmail">Email address</label>
-            </div>
-            
-            <div class="input-group">
-                <input type="password" id="loginPassword" placeholder=" " required>
-                <label for="loginPassword">Password</label>
-            </div>
-            
-            <button type="submit" class="submit-btn">Sign In</button>
-            
-            <div class="form-footer">
-                <div class="remember-me">
-                    <input type="checkbox" id="remember">
-                    <label for="remember">Remember me</label>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">Góc Truyện Tranh</div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">TRANG CHỦ</a>
+                <a href="#" class="nav-link">DANH SÁCH</a>
+                <a href="#" class="nav-link">LIÊN HỆ</a>
+            </nav>
+            <div class="header-actions">
+                <button class="search-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <div class="user-info" id="userInfo">
+                    <!-- Will be populated by JavaScript -->
                 </div>
-                <a href="#" class="help-link">Need help?</a>
+                <button class="menu-btn">☰</button>
             </div>
-        </form>
-        
-        <div class="signup-link">
-            New to web comic? <a href="#" id="showRegister">Sign up now</a>
         </div>
-        
-        <div class="recaptcha-info">
-            This page is protected by Google reCAPTCHA to ensure you're not a bot. 
-            <a href="#">Learn more</a>
-        </div>
-    </div>
+    </header>
 
-    <!-- Register Form -->
-    <div class="container hidden" id="registerContainer">
-        <h1>Sign Up</h1>
-        
-        <form id="registerForm">
-            <div class="input-group">
-                <input type="text" id="registerUsername" placeholder=" " required>
-                <label for="registerUsername">Username</label>
-            </div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Carousel Banner -->
+            <section class="carousel-section">
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://via.placeholder.com/1200x400/2c3e50/ffffff?text=Banner+1" alt="Banner 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/1200x400/34495e/ffffff?text=Banner+2" alt="Banner 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://via.placeholder.com/1200x400/2c3e50/ffffff?text=Banner+3" alt="Banner 3">
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev" onclick="moveCarousel(-1)">❮</button>
+                    <button class="carousel-btn next" onclick="moveCarousel(1)">❯</button>
+                    <div class="carousel-dots"></div>
+                </div>
+            </section>
 
-            <div class="input-group">
-                <input type="email" id="registerEmail" placeholder=" " required>
-                <label for="registerEmail">Email address</label>
-            </div>
-            
-            <div class="input-group">
-                <input type="password" id="registerPassword" placeholder=" " required>
-                <label for="registerPassword">Password</label>
-            </div>
+            <!-- Theo Dõi Gần Đây -->
+            <section class="section">
+                <div class="section-header">
+                    <h2>Theo Dõi Gần Đây</h2>
+                    <a href="#" class="see-more">Xem Thêm »</a>
+                </div>
+                <div class="manga-grid">
+                    <div class="manga-card">
+                        <img src="assets/pha-than-cua-nu-hoang-de.png" alt="Manga">
+                        <div class="manga-info">
+                            <h3>Phá Thần Của Nữ Hoàng Đế</h3>
+                            <p class="chapter">Chương 80</p>
+                        </div>
+                    </div>
+                    <div class="manga-card">
+                        <img src="assets/cam-nang-giao-hoa-tieu-thu-quy-toc.png" alt="Manga">
+                        <div class="manga-info">
+                            <h3>Cẩm Nang Giáo Hóa Tiểu Thự Quỷ Tộc</h3>
+                            <p class="chapter">Chương 8</p>
+                        </div>
+                    </div>
+                    <div class="manga-card">
+                        <img src="assets/anh-hung-da-tro-thanh-phan-dien-ma-to-ma-anh.png" alt="Manga">
+                        <div class="manga-info">
+                            <h3>Anh Hùng Đã Trở Thành Phản Diện Mà Tôi Ám Anh</h3>
+                            <p class="chapter">Chương 41</p>
+                        </div>
+                    </div>
+                    <div class="manga-card">
+                        <img src="assets/tro-thanh-thien-tai-toc-bien-cua-hoc-vien-ma-phap.png" alt="Manga">
+                        <div class="manga-info">
+                            <h3>Trở Thành Thiên Tài Tốc Biến Của Học Viện Ma Pháp</h3>
+                            <p class="chapter">Chương 86</p>
+                        </div>
+                    </div>
+                    <div class="manga-card">
+                        <img src="assets/kiem-nay-ma-vuong-ta-khong-theo-chuan-muc-nua.png" alt="Manga">
+                        <div class="manga-info">
+                            <h3>Kiếp Này Ma Vương Ta Không Theo Chuẩn Mực Nữa!</h3>
+                            <p class="chapter">Chương 16</p>
+                        </div>
+                    </div>
+                    <div class="manga-card">
+                        <img src="assets/huong-dan-sinh-ton-trong-hoc-vien.png" alt="Manga">
+                        <div class="manga-info">
+                            <h3>Hướng Dẫn Sinh Tồn Trong Học Viện</h3>
+                            <p class="chapter">Chương 91</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <div class="input-group">
-                <input type="password" id="verifyPassword" placeholder=" " required>
-                <label for="verifyPassword">Confirm Password</label>
-            </div>
-            
-            <button type="submit" class="submit-btn">Sign Up</button>
-        </form>
-        
-        <div class="signup-link">
-            Already have an account? <a href="#" id="showLogin">Sign in now</a>
+            <!-- Cập Nhật Gần Đây -->
+            <section class="section">
+                <div class="section-header">
+                    <h2>Cập Nhật Gần Đây</h2>
+                    <div class="tabs">
+                        <button class="tab active" onclick="switchTab(0)">TẤT CẢ</button>
+                        <button class="tab" onclick="switchTab(1)">ĐÃ ĐỌC</button>
+                    </div>
+                </div>
+                <div class="manga-grid-large">
+                    <div class="manga-card-large">
+                        <img src="assets/pha-than-cua-nu-hoang-de.png" alt="Manga">
+                        <div class="badge">HOT</div>
+                    </div>
+                    <div class="manga-card-large">
+                        <img src="assets/anh-hung-da-tro-thanh-phan-dien-ma-to-ma-anh.png" alt="Manga">
+                        <div class="badge">NEW</div>
+                    </div>
+                    <div class="manga-card-large">
+                        <img src="assets/tro-thanh-thien-tai-toc-bien-cua-hoc-vien-ma-phap.png" alt="Manga">
+                    </div>
+                    <div class="manga-card-large">
+                        <img src="assets/kiem-nay-ma-vuong-ta-khong-theo-chuan-muc-nua.png" alt="Manga">
+                    </div>
+                    <div class="manga-card-large">
+                        <img src="assets/huong-dan-sinh-ton-trong-hoc-vien.png" alt="Manga">
+                    </div>
+                    <div class="manga-card-large">
+                        <img src="assets/cam-nang-giao-hoa-tieu-thu-quy-toc.png" alt="Manga">
+                    </div>
+                </div>
+            </section>
         </div>
-        
-        <div class="recaptcha-info">
-            This page is protected by Google reCAPTCHA to ensure you're not a bot. 
-            <a href="#">Learn more</a>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Góc Truyện Tranh. All rights reserved.</p>
         </div>
-    </div>
+    </footer>
+
+    <script src="script/storage.js"></script>
+    <script src="script/main.js"></script>
+    <script src="script/auth-check.js"></script>
 </body>
 </html>
