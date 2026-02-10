@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindX Cinema</title>
+    <title>My Comic - Đăng nhập / Đăng ký</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <!-- ⚠️ QUAN TRỌNG: Load storage.js TRƯỚC script.js -->
+    <script src="script/storage.js"></script>
+    <script src="script/script.js" defer></script>
 </head>
 <body>
     <!-- Video Background -->
     <video class="background-video" autoplay muted loop playsinline>
         <source src="background.mp4" type="video/mp4">
-        <video class="background-video" autoplay muted loop playsinline playbackRate="0.3"></video>
         Your browser does not support the video tag.
     </video>
     
@@ -44,7 +45,7 @@
         </form>
         
         <div class="signup-link">
-            New to ưeb comic? <a href="#" id="showRegister">Sign up now</a>
+            New to web comic? <a href="#" id="showRegister">Sign up now</a>
         </div>
         
         <div class="recaptcha-info">

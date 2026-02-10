@@ -30,15 +30,6 @@ body {
     filter: blur(3px); /* Làm mờ video 3px */
 }
 
-@media (max-width: 768px) {
-    .background-video {
-        display: none;
-    }
-    body {
-        background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
-    }
-}
-
 .background-overlay {
     position: fixed;
     top: 0;
